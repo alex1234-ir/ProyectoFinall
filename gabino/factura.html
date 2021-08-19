@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="factura.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Generador de factura</title>
+<script>
+
+
+////////////variables////////
+  var idCliente;
+  var nombreCliente ;
+  var direccionCliente; 
+  var telefonoCliente;
+  var nombreProducto;
+  var precio;
+  var cantidad;
+  var total;
+  var subtotal;
+  var p=0;
+  var iva;
+  var subtotalP=0;
+  var fecha= new Date();
+  var imprimir;
+  var numero_Factura=0;
+
+
+function generarFactura(){
+
+  
+  idCliente=document.getElementById("idCliente").value;
+  nombreCliente=document.getElementById("nombreCliente").value;
+  direccionCliente=document.getElementById("direccionCliente").value;
+  telefonoCliente=document.getElementById("telefonoCliente").value;
+
+ 
+  
+  document.write(fecha.getDate() + "/" + (fecha.getMonth()+1) + "/" + fecha.getFullYear()+"</br>"+"</br>"+"</br>");
+  document.write("Matricula:"+'&nbsp;'+idCliente+"<br>"+"<br>");
+  document.write(" Alumno :"+'&nbsp;'+nombreCliente+"<br>"+"<br>");
+  document.write(" Carrera:"+'&nbsp;'+direccionCliente+"<br>"+"<br>");
+  document.write(" Grado:"+'&nbsp;'+telefonoCliente+"<br>"+"<br>"+"<br>");
+  
+  
+for (subtotal=0; nombreProducto != "*"; subtotal++) {
+
+
+nombreProducto=prompt('Que va a pagar?');
+document.write("Pago de :  "+'&nbsp;'+nombreProducto+'&nbsp;'+'&nbsp;');
+
+precio=parseFloat(prompt('Ingresa el Precio'));
+document.write("Precio:  "+'&nbsp;'+precio+'&nbsp;'+'&nbsp;');
+
+cantidad=parseInt(prompt('Ingrese Cantidad'));
+document.write("Cantidad:  "+'&nbsp;'+cantidad+'&nbsp;'+'&nbsp;');
+
+
+nombreProducto=prompt('Ingrese "*" Para terminar o cualquier tecla para continuar');
+
+  subtotal=precio*cantidad;
+  subtotalP=subtotalP+parseInt(subtotal);
+  iva=subtotalP*0.10;
+  total=subtotalP+iva;
+  
+
+  document.write("SubTotal :"+'&nbsp;'+subtotal+"<br>"+"<br>"+"<br>");
+  
+
+} 
+document.write("Subtotal : "+'&nbsp;'+subtotalP+"<br>"+"<br>");
+document.write("Iva 19% :"+'&nbsp;'+iva+"<br>"+"<br>");
+document.write("Total :"+'&nbsp;'+total+"<br>"+"<br>");
+document.write('<button onclick="window.print()">Imprimir Factura</button>');
+document.write('<input type="button" value="Regresar" onclick="location.reload()">');
+}
+
+generarFactura()
+
+
+</script>
+
+<style type="">
+  body {
+    
+    color: purple;
+    
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+
+<div class="logo">
+    <h1>Universidad</h1>
+</div>
+
+<div class="menu" id="show-menu">
+
+    <nav>
+        <ul>
+            
+        <li><a href="../Alumnos/tabla.php">Inicio</a></li>
+                <li><a href="../buscador/index.php">Buscador</a></li>
+                <li><a href="../gabino/factura.html">Facturacion</a></li>
+                <li><a href="../login/cerrar-sesion.php" class="close-sesion">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+
+</div>
+
+</div>
+    </header>
+
+<div id="factu">
+<h1>Generador de Factura</h1><br><br>
+</div>
+<div id="datos"></div>
+
+<form id="principal">
+
+
+  Matricula <br><input type="text" name="idCliente" id="idCliente" placeholder="Matricula"/><br><br>
+  Alumno  <br><input type="text" name="nombreCliente" id="nombreCliente" placeholder="Alumno" /><br><br>
+  Carrera <br><input type="text" name="direccionCliente" id="direccionCliente" placeholder="Carrera" /><br><br>
+  rado <br><input type="text" name="telefonoCliente" id="telefonoCliente" placeholder=" Grado" /><br><br>
+   <input type="button" id="boton" name="Continuar" onclick="generarFactura()"   value="Continuar"/>
+
+
+<ul id="contenido">
+
+</form>
+
+</body>
+</html>

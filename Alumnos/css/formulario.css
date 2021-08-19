@@ -1,0 +1,49 @@
+body {
+    background-image: url(https://assets.website-files.com/5f173aca2700074b6b234dff/5f1b0af800acae9d053a9053_egresados%20ingenieria%20industrial.jpg);
+   background-size: 100% 100%;
+   background-attachment: fixed;
+    
+    
+    font-family: monospace;
+}
+
+form {
+    
+    width: 450px;
+    margin: rigth;
+    background: rgb(0,0,0,0.4);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 100px;
+    margin-left: 20px;
+    border-radius: 7px;
+}
+
+h1 {
+    color: #fff;
+}
+
+input, select {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 17px;
+    border: none;
+}
+
+#boton {
+    background: #000102;
+    color: #fff;
+    padding: 20px;
+}
+
+#boton:hover {
+    cursor: pointer;
+}
+
+@media (max-width:480px) {
+    form {
+        width: 100%;
+    }
+}

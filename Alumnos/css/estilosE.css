@@ -1,0 +1,128 @@
+body {
+   
+    background-repeat: 100vw 100vh;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: monospace;
+}
+
+.container-table {
+    margin: 100px auto;
+    width: 90%;
+    background: white;
+    margin: 50px auto;
+    box-shadow: 0 0 20px #333;
+
+    display: grid;
+    grid-template-columns: repeat(15);
+    grid-auto-rows: 50px;
+
+    position: relative;
+}
+
+.table__title {
+    grid-column-start: 1;
+    grid-column-end: 15;
+
+    background: rgba(40, 65, 120, 1);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.9em;
+}
+
+.table__header, .table__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table__header {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.table__item {
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+.container-add{
+    width: 90%;
+    margin: 50px auto;
+}
+
+.container__title{
+    margin: 0;
+    padding: 10px;
+    background: rgb(120, 65, 40, 1);
+    color: white;
+    font-size: 1.9em;
+    text-align: center;
+}
+
+.container__form{
+    background: white;
+    box-shadow: 0 0 20px #333;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container__label{
+    font-size: 1.3em;
+    width: 45%;
+}
+
+.container__input{
+    width: 25%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 1em;
+    padding: 5px;
+}
+
+.container__submit{
+    background: rgb(120, 65, 40, 1);
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 15px auto;
+    width: 100px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.title_edit{
+    position: absolute;
+    right: 7%;
+    color: white;
+    text-decoration: none;
+}
+
+.container-table--edit{
+    grid-template-columns: repeat(15);
+    width: 95%;
+    min-width: 900px;
+    grid-auto-rows: 50px;
+}
+
+.table__title--edit{
+    grid-column-start: 1;
+    grid-column-end: 16;
+}
+
+.table__input{
+    display: block;
+    padding-left: 10px;
+}
+
+.container__submit--actualizar{
+    background: rgb(10 , 65, 120, 1);
+    padding: 0;
+    margin: 0;
+    font-size: .9em;
+    width: 100%;
+}
